@@ -1,0 +1,92 @@
+.products {
+    padding-top: 13.6rem;
+
+    @include media-breakpoint-down(md) {
+        padding: 12.5rem 1.6rem 0;
+    }
+
+    .label {
+        display: flex;
+        flex-direction: column;
+
+        .title {
+            display: flex;
+
+            h1 {
+                font-size: 3.6rem;
+                font-weight: 700;
+                color: $secondaryLabel;
+                margin: 0;
+
+                @include media-breakpoint-down(md) {
+                    font-size: 2.5rem;
+                }
+            }
+
+            .c-red {
+                font-weight: 600;
+                color: $systemRed;
+            }
+        }
+
+        p {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: $secondaryLabel;
+            line-height: 2.5rem;
+            margin: 1.7rem 0 3.5rem;
+
+            @include media-breakpoint-down(md) {
+                font-size: 1.2rem;
+                line-height: 1.8rem;
+                margin: 0.8rem 0 3rem;
+            }
+        }
+    }
+
+    .scroll {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+
+        a {
+            flex: 0 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 6.2rem;
+            padding: 0 2.5rem;
+            margin-right: 1.5rem;
+            text-decoration: none;
+            border: 0.1rem solid;
+
+            @include media-breakpoint-down(md) {
+                padding: 0 1.5rem;
+            }
+
+            img {
+                height: 3.3rem;
+                margin-right: 0.6rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+                font-weight: 600;
+                color: $secondaryLabel;
+
+                @include media-breakpoint-down(md) {
+                    font-size: 1.6rem;
+                }
+            }
+        }
+
+        :nth-child(1) { border-color: $systemMint; }
+        :nth-child(2) { border-color: $systemGreen; }
+        :nth-child(3) { border-color: $systemPink; }
+        :nth-child(4) { border-color: $systemTeal; }
+        :nth-child(5) { border-color: $systemPurple; }
+        :nth-child(6) { border-color: $systemBlue; }
+        :nth-child(7) { border-color: $systemOrange; margin-right: 0; }
+
+    }
+}
