@@ -1,0 +1,121 @@
+.work {
+    padding-bottom: 12.5rem;
+    background-image: url("../../assets/images/bg-work.png");
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include media-breakpoint-down(md) {
+        padding: 0 1.6rem 5rem;
+        background: none;
+    }
+
+    .label {
+        display: flex;
+        flex-direction: column;
+
+        .title {
+            display: flex;
+
+            h1 {
+                font-size: 3.6rem;
+                font-weight: 600;
+                color: $secondaryLabel;
+                margin: 0;
+                white-space: nowrap;
+
+                @include media-breakpoint-down(md) {
+                    font-size: 2.5rem;
+                }
+            }
+
+            .c-red {
+                color: $systemRed;
+            }
+        }
+
+        p {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: $secondaryLabel;
+            line-height: 2.5rem;
+            margin: 1.7rem 0 3.5rem;
+
+            @include media-breakpoint-down(md) {
+                font-size: 1.2rem;
+                line-height: 1.8rem;
+                margin: 0.8rem 0 3rem;
+            }
+        }
+    }
+
+    .clients {
+        display: flex;
+        flex-wrap: wrap;
+
+        @include media-breakpoint-down(lg) {
+            justify-content: space-between;
+        }
+
+        .client {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex: 1 1 22rem;
+            margin: 0.7rem;
+
+            @include media-breakpoint-between(sm, lg) {
+                flex: 0 1 30%;
+            }
+
+            @include media-breakpoint-only(xs) {
+                flex: 0 1 45%;
+            }
+
+            img {
+                border: 0.5px solid #383838;
+
+                @include media-breakpoint-down(md) {
+                    width: 12.5rem;
+                    height: 11rem;
+                }
+            }
+        }
+
+        @include media-breakpoint-up(xl) {
+            .client:nth-child(2)>img,
+            .client:nth-child(4)>img,
+            .client:nth-child(7)>img,
+            .client:nth-child(9)>img,
+            .client:nth-child(12)>img,
+            .client:nth-child(14)>img,
+            .client:nth-child(17)>img,
+            .client:nth-child(19)>img {
+                margin-top: 4rem;
+            }
+        }
+
+        @include media-breakpoint-only(lg) {
+            @for $i from 1 through 9 {
+                .client:nth-child(#{$i*2})>img {
+                    margin-top: 4rem;
+                }
+            }
+        }
+
+        @include media-breakpoint-between(sm, lg) {
+            @for $i from 1 through 9 {
+                .client:nth-child(#{($i*3)-1})>img {
+                    margin-top: 4rem;
+                }
+            }
+        }
+
+        @include media-breakpoint-only(xs) {
+            @for $i from 1 through 9 {
+                .client:nth-child(#{$i*2})>img {
+                    margin-top: 4rem;
+                }
+            }
+        }
+    }
+}

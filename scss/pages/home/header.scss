@@ -3,6 +3,7 @@
     width: 100%;
     background-image: url("../../assets/images/bg-header-web.png");
     background-repeat: no-repeat;
+    background-position: center;
 
     @include media-breakpoint-down(md) {
         display: block;

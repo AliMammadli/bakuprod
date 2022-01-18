@@ -1,0 +1,134 @@
+.slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 0 15rem;
+    overflow: hidden;
+    background-image: url("../../assets/images/bg-slider.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+
+    @include media-breakpoint-down(md) {
+        flex-direction: column;
+        background-size: 100vw;
+        padding: 5rem 0 0;
+    }
+
+    .bg-circle {
+        position: relative;
+        margin-top: -27rem;
+        margin-left: -27rem;
+
+        @include media-breakpoint-down(md) {
+            margin-top: -21rem;
+            margin-left: -21rem;
+        }
+    }
+
+    .gr-circle {
+        position: absolute;
+        width: 91.4rem;
+        height: 73.4rem;
+        top: 15.6rem;
+        left: -8rem;
+        background-image: linear-gradient(180deg, #f4f7ff 10%, rgba(255, 255, 255, 0) 36.2%), linear-gradient(90deg, #f4f7ff 28.9%, rgba(255, 255, 255, 0) 54.2%);
+
+        @include media-breakpoint-down(md) {
+            width: 57rem;
+            height: 28.6rem;
+            background-image: linear-gradient(180deg, #f4f7ff 2.9%, rgba(255, 255, 255, 0) 23.2%), linear-gradient(90deg, #f4f7ff 17.9%, rgba(255, 255, 255, 0) 43.2%);
+        }
+    }
+
+    .circle {
+        --angle: 110deg;
+        position: relative;
+        width: 73.4rem;
+        height: 73.4rem;
+        border: 11rem solid rgba(255, 11, 11, 0.3);
+        border-radius: 50%;
+        transform: rotate(var(--angle));
+
+        @include media-breakpoint-down(md) {
+            width: 40.6rem;
+            height: 40.6rem;
+            border-width: 8rem;
+        }
+
+        .plate {
+            --angle: -110deg;
+            background-image: url("../../assets/images/slider-1.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 35rem;
+
+            position: absolute;
+            width: 39rem;
+            height: 39rem;
+            transform: rotate(var(--angle));
+            top: -21.5rem;
+            left: 17.2rem;
+
+            @include media-breakpoint-down(md) {
+                background-size: 22rem;
+                top: -12.5rem;
+                left: 9.2rem;
+                width: 22rem;
+                height: 22rem;
+            }
+        }
+    }
+
+    .content {
+        padding-left: 10rem;
+        flex-grow: 1;
+
+        @include media-breakpoint-down(md) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 4rem 1.6rem;
+        }
+
+        .buttons {
+            button {
+                width: 6.2rem;
+                height: 6.2rem;
+                border: 0;
+                background-color: transparent;
+            }
+
+            button:hover,
+            button:active,
+            button:focus {
+                background-color: $systemGreen;
+            }
+        }
+
+        h1 {
+            font-size: 3.6rem;
+            font-weight: 600;
+            color: $secondaryLabel;
+            margin: 2.7rem 0 1.7rem;
+
+            @include media-breakpoint-down(md) {
+                font-size: 2.5rem;
+                margin: 1.5rem 0 0.7rem;
+            }
+        }
+
+        p {
+            font-size: 1.6rem;
+            font-weight: 400;
+            line-height: 2.4rem;
+            color: $secondaryLabel;
+            margin: 0;
+
+            @include media-breakpoint-down(md) {
+                font-size: 1.4rem;
+                line-height: 2rem;
+                text-align: center;
+            }
+        }
+    }
+}

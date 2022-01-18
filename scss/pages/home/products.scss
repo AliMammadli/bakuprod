@@ -17,6 +17,7 @@
                 font-weight: 700;
                 color: $secondaryLabel;
                 margin: 0;
+                white-space: nowrap;
 
                 @include media-breakpoint-down(md) {
                     font-size: 2.5rem;
@@ -59,6 +60,7 @@
             margin-right: 1.5rem;
             text-decoration: none;
             border: 0.1rem solid;
+            transition: box-shadow 0.25s;
 
             @include media-breakpoint-down(md) {
                 padding: 0 1.5rem;
@@ -80,13 +82,22 @@
             }
         }
 
-        :nth-child(1) { border-color: $systemMint; }
-        :nth-child(2) { border-color: $systemGreen; }
-        :nth-child(3) { border-color: $systemPink; }
-        :nth-child(4) { border-color: $systemTeal; }
-        :nth-child(5) { border-color: $systemPurple; }
-        :nth-child(6) { border-color: $systemBlue; }
-        :nth-child(7) { border-color: $systemOrange; margin-right: 0; }
+        a:nth-child(1) { border-color: $systemMint; &:hover, &:active, &:focus { box-shadow: inset 18rem 0 0 0 $systemMint; } }
+        a:nth-child(2) { border-color: $systemGreen; &:hover, &:active, &:focus { box-shadow: inset 18rem 0 0 0 $systemGreen; } }
+        a:nth-child(3) { border-color: $systemPink; &:hover, &:active, &:focus { box-shadow: inset 18rem 0 0 0 $systemPink; } }
+        a:nth-child(4) { border-color: $systemTeal; &:hover, &:active, &:focus { box-shadow: inset 18rem 0 0 0 $systemTeal; } }
+        a:nth-child(5) { border-color: $systemPurple; &:hover, &:active, &:focus { box-shadow: inset 18rem 0 0 0 $systemPurple; } }
+        a:nth-child(6) { border-color: $systemBlue; &:hover, &:active, &:focus { box-shadow: inset 18rem 0 0 0 $systemBlue; } }
+        a:nth-child(7) { border-color: $systemOrange; margin-right: 0; &:hover, &:active, &:focus { box-shadow: inset 18rem 0 0 0 $systemOrange; } }
 
+
+    }
+
+    .scroll::-webkit-scrollbar {
+        display: none;
+        background: transparent;
+    }
+    .scroll::-webkit-scrollbar-thumb {
+        background: transparent;
     }
 }

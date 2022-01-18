@@ -1,0 +1,271 @@
+.contact {
+
+    @include media-breakpoint-down(md) {
+        padding: 0 1.6rem 5rem;
+    }
+
+    .label {
+        display: flex;
+        flex-direction: column;
+
+        .title {
+            display: flex;
+
+            h1 {
+                font-size: 3.6rem;
+                font-weight: 600;
+                color: $secondaryLabel;
+                margin: 0;
+                white-space: nowrap;
+
+                @include media-breakpoint-down(md) {
+                    font-size: 2.5rem;
+                }
+            }
+
+            .c-red {
+                color: $systemRed;
+            }
+        }
+
+        p {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: $secondaryLabel;
+            line-height: 2.5rem;
+            margin: 1.7rem 0 3.5rem;
+
+            @include media-breakpoint-down(md) {
+                font-size: 1.2rem;
+                line-height: 1.8rem;
+                margin: 0.8rem 0 2rem;
+            }
+        }
+    }
+
+    .map {
+        display: flex;
+        flex-grow: 1;
+        justify-content: space-between;
+        height: 596px;
+        margin: 3.5rem 0 4rem;
+        background-image: url("../../assets/images/bg-map-web.png");
+        background-repeat: no-repeat;
+        background-position: center;
+
+        @include media-breakpoint-down(md) {
+            height: auto;
+            margin: 0;
+            background-repeat: repeat;
+            background-position: 24% 0;
+            flex-direction: column;
+        }
+
+        .requisites {
+            margin: 5rem 0 0 4.4rem;
+
+            @include media-breakpoint-down(md) {
+                margin: 1.6rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+                font-weight: 600;
+                color: $systemRed;
+                margin: 0 0 0.6rem;
+
+                @include media-breakpoint-down(md) {
+                    font-size: 2rem;
+                    margin: 0 0 0.4rem;
+                }
+            }
+
+            h2 {
+                font-size: 1.8rem;
+                font-weight: 600;
+                color: $secondaryLabel;
+                margin: 0;
+
+                @include media-breakpoint-down(md) {
+                    font-size: 1.4rem;
+                }
+            }
+
+            p {
+                font-size: 1.6rem;
+                font-weight: 400;
+                color: $secondaryLabel;
+                line-height: 2.5rem;
+                margin: 0 0 3rem;
+
+                @include media-breakpoint-down(md) {
+                    font-size: 1.4rem;
+                    line-height: 2.5rem;
+                    margin: 0 0 1rem;
+                }
+            }
+
+            .subtitle {
+                @include media-breakpoint-down(md) {
+                    font-size: 1.2rem;
+                    line-height: 1.8rem;
+                    margin: 0 0 2.1rem;
+                }
+            }
+        }
+
+        .message {
+            display: flex;
+            flex-direction: column;
+            margin: 3rem;
+            background-color: #FCFCFC;
+
+            @include media-breakpoint-down(md) {
+                margin: 11rem 1.6rem 1.6rem;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                padding: 2rem 3rem 3rem;
+                max-width: 45rem;
+
+                @include media-breakpoint-down(md) {
+                    padding: 1.6rem 1.6rem 2rem;
+                    max-width: none;
+                }
+
+                h1 {
+                    font-size: 2.5rem;
+                    font-weight: 600;
+                    color: $systemRed;
+                    margin: 0 0 0.5rem;
+    
+                    @include media-breakpoint-down(md) {
+                        font-size: 2rem;
+                        margin: 0 0 0.8rem;
+                    }
+                }
+
+                p {
+                    font-size: 1.4rem;
+                    font-weight: 400;
+                    color: $secondaryLabel;
+                    line-height: 2rem;
+                    margin: 0 0 4.1rem;
+    
+                    @include media-breakpoint-down(md) {
+                        font-size: 1.2rem;
+                        line-height: 1.8rem;
+                        margin: 0 0 1.5rem;
+                    }
+                }
+
+                .input {
+                    border: 0.1rem solid #C4C4C4;
+                    margin-bottom: 4rem;
+                    height: 5rem;
+                    padding: 1.5rem;
+                    font-size: 1.4rem;
+                    font-weight: 400;
+                    color: $secondaryLabel;
+                    line-height: 2rem;
+
+                    @include media-breakpoint-down(md) {
+                        margin-bottom: 1.5rem;
+                    }
+                }
+
+                #message {
+                    resize: none;
+                    height: 10rem !important;
+                }
+
+                .btn-submit {
+                    border: none;
+                    height: 5rem;
+                    width: 14rem;
+                    align-self: flex-end;
+                    font-size: 1.4rem;
+                    font-weight: 400;
+                    color: $white;
+                    background-color: $systemMint;
+                }
+            }
+        }
+    }
+
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 4rem 0 2.7rem;
+
+        @include media-breakpoint-down(md) {
+            flex-direction: column;
+            justify-content: center;
+            margin: 5.7rem 0 0;
+            padding: 0 1.6rem;
+        }
+
+        .web {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: $secondaryLabel;
+            opacity: 0.5;
+
+            @include media-breakpoint-down(md) {
+                font-size: 1.2rem;
+                align-self: flex-start;
+            }
+        }
+
+        .social {
+            display: flex;
+            align-items: center;
+
+            @include media-breakpoint-down(md) {
+                font-size: 1.4rem;
+                width: 100%;
+                justify-content: space-between;
+                margin-top: -10rem;
+            }
+
+            h3 {
+                font-size: 1.4rem;
+                font-weight: 600;
+                color: $secondaryLabel;
+                margin-right: 0.2rem;
+            }
+
+            .social-icons {
+                display: flex;
+                align-items: center;
+
+                a {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 3.6rem;
+                    height: 3.6rem;
+                    border-radius: 50%;
+                    margin-left: 1rem;
+                    border: 0;
+                    background-color: $secondaryLabel;
+
+                    @include media-breakpoint-down(md) {
+                        width: 2.6rem;
+                        height: 2.6rem;
+                    }
+
+                    img {
+                        @include media-breakpoint-down(md) {
+                            width: 1.4rem;
+                            height: 1.4rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

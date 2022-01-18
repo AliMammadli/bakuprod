@@ -1,0 +1,20 @@
+/* Error: Undefined mixin.
+ *    ,
+ * 11 | /     @include media-breakpoint-down(md) {
+ * 12 | |         flex-direction: column;
+ * 13 | |         background-size: 100vw;
+ * 14 | |         padding: 5rem 0 0;
+ * 15 | \     }
+ *    '
+ *   scss/pages/home/slider.scss 11:5  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined mixin.\a    \2577 \a 11 \2502  \250c      @include media-breakpoint-down(md) {\a 12 \2502  \2502          flex-direction: column;\a 13 \2502  \2502          background-size: 100vw;\a 14 \2502  \2502          padding: 5rem 0 0;\a 15 \2502  \2514      }\a    \2575 \a   scss/pages/home/slider.scss 11:5  root stylesheet";
+}

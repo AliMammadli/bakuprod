@@ -1,12 +1,12 @@
 /* Error: Undefined mixin.
  *    ,
- * 7  | /     @include media-breakpoint-down(md) {
- * 8  | |         display: block;
- * 9  | |         background-image: url("../../assets/images/bg-header-mb.png");
- * 10 | |         background-position: 35%;
- * 11 | \     }
+ * 8  | /     @include media-breakpoint-down(md) {
+ * 9  | |         display: block;
+ * 10 | |         background-image: url("../../assets/images/bg-header-mb.png");
+ * 11 | |         background-position: 35%;
+ * 12 | \     }
  *    '
- *   scss/pages/home/header.scss 7:5  root stylesheet */
+ *   scss/pages/home/header.scss 8:5  root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
@@ -16,5 +16,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: 'Error: Undefined mixin.\a    \2577 \a 7  \2502  \250c      @include media-breakpoint-down(md) {\a 8  \2502  \2502          display: block;\a 9  \2502  \2502          background-image: url("../../assets/images/bg-header-mb.png");\a 10 \2502  \2502          background-position: 35%;\a 11 \2502  \2514      }\a    \2575 \a   scss/pages/home/header.scss 7:5  root stylesheet';
+  content: 'Error: Undefined mixin.\a    \2577 \a 8  \2502  \250c      @include media-breakpoint-down(md) {\a 9  \2502  \2502          display: block;\a 10 \2502  \2502          background-image: url("../../assets/images/bg-header-mb.png");\a 11 \2502  \2502          background-position: 35%;\a 12 \2502  \2514      }\a    \2575 \a   scss/pages/home/header.scss 8:5  root stylesheet';
 }
