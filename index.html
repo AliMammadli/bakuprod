@@ -5,7 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="assets/css/style.css" />
-    <title>HORECA. Bakuprod.az • HORECA products in Baku, delivery and Wholesale</title>
+    <link rel="shortcut icon" href="assets/images/favicon.png">
+    <title>HORECA. Bakuprod.az • Buy Horeca Products in Baku</title>
+
+    <script type="module" src="assets/scripts/slider.js"></script>
+    <script src="assets/scripts/scroll.js"></script>
 </head>
 
 <body>
@@ -40,7 +44,7 @@
         <input id="nav-toggle" type="checkbox">
         <div class="logo">
             <img src="assets/images/lg-bakuprod.png" alt="bakuprod">
-            <h3>+994556820101</h3>
+            <a href="tel:+994556820101">+994556820101</a>
         </div>
         <ul class="links">
             <li><a href="#products">Our product & categories</a></li>
@@ -64,7 +68,7 @@
     </nav>
 
     <!-- PRODUCTS -->
-    <section class="products">
+    <section class="products" id="products">
         <div class="container">
             <div class="label">
                 <div class="title">
@@ -79,35 +83,35 @@
                     aparıcı şirkətlərdən biri olmaqla tanınır.
                 </p>
             </div>
-            <div class="scroll">
-                <a href="#">
+            <div class="scroll" id="scroll">
+                <button onclick="slideTo(1)" id="button-1" autofocus>
                     <img src="assets/images/ic-sushi.svg" alt="sushi">
                     <h2>Sushi<br />məhsulları</h2>
-                </a>
-                <a href="#">
+                </button>
+                <button onclick="slideTo(2)" id="button-2">
                     <img src="assets/images/ic-noodle.svg" alt="sushi">
                     <h2>Asiya<br />mətbəxi</h2>
-                </a>
-                <a href="#">
+                </button>
+                <button onclick="slideTo(3)" id="button-3">
                     <img src="assets/images/ic-fish.svg" alt="sushi">
                     <h2>Dəniz<br />məhsulları</h2>
-                </a>
-                <a href="#">
+                </button>
+                <button onclick="slideTo(4)" id="button-4">
                     <img src="assets/images/ic-greens.svg" alt="sushi">
                     <h2>Meyvə<br />tərəvəzlər</h2>
-                </a>
-                <a href="#">
+                </button>
+                <button onclick="slideTo(5)" id="button-5">
                     <img src="assets/images/ic-milk.svg" alt="sushi">
                     <h2>Süd və yağ<br />məhsulları</h2>
-                </a>
-                <a href="#">
+                </button>
+                <button onclick="slideTo(6)" id="button-6">
                     <img src="assets/images/ic-sauce.svg" alt="sushi">
                     <h2>Sous<br />məhsulları</h2>
-                </a>
-                <a href="#">
+                </button>
+                <button onclick="slideTo(7)" id="button-7">
                     <img src="assets/images/ic-flour.svg" alt="sushi">
                     <h2>Un<br />məhsulları</h2>
-                </a>
+                </button>
             </div>
         </div>
     </section>
@@ -137,7 +141,7 @@
     </section>
 
     <!-- ABOUT -->
-    <section class="about">
+    <section class="about" id="about">
         <div class="container">
             <div class="label">
                 <div class="title">
@@ -205,7 +209,7 @@
     </section>
 
     <!-- WORK -->
-    <section class="work">
+    <section class="work" id="work">
         <div class="container">
             <div class="label">
                 <div class="title">
@@ -246,7 +250,7 @@
     </section>
 
     <!-- CONTACT -->
-    <section class="contact">
+    <section class="contact" id="contact">
         <div class="container">
             <div class="label">
                 <div class="title">
@@ -267,9 +271,9 @@
                     <h2>Address:</h2>
                     <p>Baku, Sabail, Badamdar, Massiv 3</p>
                     <h2>Phone:</h2>
-                    <p>+994556820101</p>
+                    <a href="tel:+994556820101">+994556820101</a>
                     <h2>E-mail:</h2>
-                    <p>office@bakuprod.az</p>
+                    <a href="mailto:office@bakuprod.az">office@bakuprod.az</a>
                 </div>
                 <div class="message">
                     <form>
@@ -300,7 +304,6 @@
         </div>
     </section>
 
-    <script type="module" src="assets/scripts/slider.js"></script>
 </body>
 
 </html>

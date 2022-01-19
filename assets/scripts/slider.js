@@ -44,6 +44,7 @@ function backClick() {
         index -= 1
         document.querySelector("#slider-title").innerHTML = content[index - 1].title
         document.querySelector("#slider-desc").innerHTML = content[index - 1].desc
+        document.querySelector(`#button-${index}`).focus()
         setTimeout(() => {
             document.querySelector("#plate").style.cssText = `background-image: url("assets/images/slider-${index}.png");`
         }, 350)
@@ -59,6 +60,22 @@ function forwardClick() {
         index += 1
         document.querySelector("#slider-title").innerHTML = content[index - 1].title
         document.querySelector("#slider-desc").innerHTML = content[index - 1].desc
+        document.querySelector(`#button-${index}`).focus()
+        setTimeout(() => {
+            document.querySelector("#plate").style.cssText = `background-image: url("assets/images/slider-${index}.png");`
+        }, 800)
+    }
+}
+
+function slideTo(indexTo) {
+    if (indexTo !== index) {
+        angle -= 360 * (index - indexTo)
+        gsap.to('#circle', { duration: dur, "--angle": `${angle}deg` })
+        gsap.to('#plate', { duration: dur, "--angle": `${-angle}deg` })
+
+        index = indexTo
+        document.querySelector("#slider-title").innerHTML = content[index - 1].title
+        document.querySelector("#slider-desc").innerHTML = content[index - 1].desc
         setTimeout(() => {
             document.querySelector("#plate").style.cssText = `background-image: url("assets/images/slider-${index}.png");`
         }, 800)
@@ -68,3 +85,4 @@ function forwardClick() {
 
 window.backClick = backClick
 window.forwardClick = forwardClick
+window.slideTo = slideTo
