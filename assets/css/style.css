@@ -43,6 +43,7 @@ body {
   overflow-x: hidden;
   margin: 0;
   background-color: #F4F7FF;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .container {
@@ -196,7 +197,6 @@ body {
 
 .navbar {
   position: fixed;
-  z-index: 10;
   left: 0;
   right: 0;
   top: 0;

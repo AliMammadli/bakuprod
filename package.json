@@ -4,14 +4,20 @@
   "description": "Baku Prod Landing Page",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "sass --watch scss:assets/css"
+    "compile:sass": "sass --watch scss:assets/css",
+    "build": "./node_modules/.bin/webpack",
+    "start": "./node_modules/.bin/webpack --watch"
   },
   "author": "Ali Mammadli",
   "license": "ISC",
   "devDependencies": {
-    "sass": "^1.48.0"
+    "sass": "^1.48.0",
+    "webpack": "^5.68.0",
+    "webpack-cli": "^4.9.2"
   },
   "dependencies": {
-    "gsap": "^3.9.1"
+    "dat.gui": "^0.7.7",
+    "gsap": "^3.9.1",
+    "three": "^0.137.5"
   }
 }
