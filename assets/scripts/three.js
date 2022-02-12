@@ -22,7 +22,7 @@ animate()
 function init() {
     // Renderer
 
-    gui = new GUI()
+    // gui = new GUI()
 
     scene = new THREE.Scene()
     scene.background = new THREE.Color(0xF4F7FF)
@@ -57,18 +57,18 @@ function init() {
     })
 
 
-    camera = new THREE.PerspectiveCamera(50, window.innerWidth / (window.innerHeight / 2), 0.1, 1000)
+    camera = new THREE.PerspectiveCamera(50, window.innerWidth / (window.innerHeight), 0.1, 1000)
+    camera.position.set(-14, 9, 0)
     controls = new OrbitControls(camera, renderer.domElement)
-    controls.minDistance = 11
-    controls.maxDistance = 20
     controls.enablePan = false
+    controls.enableZoom = false
     controls.enableDamping = true
+    controls.autoRotate = true
     controls.dampingFactor = 0.03
     controls.maxPolarAngle = 1.3
     controls.minPolarAngle = 0.4
-    controls.autoRotate = true
-    camera.position.set(-12, 10, 0)
-    controls.update()
+    updateSceneSize()
+
 
 
     new RGBELoader().load('assets/model/env.hdr', (texture) => {
@@ -109,6 +109,27 @@ function onWindowResize() {
 
     renderer.setSize(window.innerWidth, window.innerHeight)
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+}
+
+
+function updateSceneSize() {
+        if (window.innerWidth <= 550) {
+            controls.minDistance = 73
+            controls.maxDistance = 80
+        } else if (window.innerWidth > 550 && window.innerWidth <= 800) {
+            controls.minDistance = 45
+            controls.maxDistance = 50
+        } else if (window.innerWidth > 800 && window.innerWidth <= 1050) {
+            controls.minDistance = 32
+            controls.maxDistance = 35
+        } else if (window.innerWidth > 1050 && window.innerWidth <= 1400) {
+            controls.minDistance = 25
+            controls.maxDistance = 30
+        } else {
+            controls.minDistance = 22
+            controls.maxDistance = 30
+        }
+    controls.update()
 }
 
 
