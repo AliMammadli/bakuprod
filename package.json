@@ -1,0 +1,22 @@
+{
+  "name": "bakuprod",
+  "version": "0.0.1",
+  "description": "Baku Prod",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AliMammadli/bakuprod.git"
+  },
+  "author": "Ali Mammadli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AliMammadli/bakuprod/issues"
+  },
+  "homepage": "https://github.com/AliMammadli/bakuprod#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
