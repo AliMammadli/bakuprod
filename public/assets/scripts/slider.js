@@ -46,7 +46,7 @@ function backClick() {
         document.querySelector("#slider-desc").innerHTML = content[index - 1].desc
         document.querySelector(`#button-${index}`).focus()
         setTimeout(() => {
-            document.querySelector("#plate").style.cssText = `background-image: url("assets/images/slider-${index}.png");`
+            document.querySelector("#plate").style.cssText = `background-image: url("assets/images/slider-${index}.webp");`
         }, 350)
     }
 }
@@ -62,7 +62,7 @@ function forwardClick() {
         document.querySelector("#slider-desc").innerHTML = content[index - 1].desc
         document.querySelector(`#button-${index}`).focus()
         setTimeout(() => {
-            document.querySelector("#plate").style.cssText = `background-image: url("assets/images/slider-${index}.png");`
+            document.querySelector("#plate").style.cssText = `background-image: url("assets/images/slider-${index}.webp");`
         }, 800)
     }
 }
@@ -77,7 +77,7 @@ function slideTo(indexTo) {
         document.querySelector("#slider-title").innerHTML = content[index - 1].title
         document.querySelector("#slider-desc").innerHTML = content[index - 1].desc
         setTimeout(() => {
-            document.querySelector("#plate").style.cssText = `background-image: url("assets/images/slider-${index}.png");`
+            document.querySelector("#plate").style.cssText = `background-image: url("assets/images/slider-${index}.webp");`
         }, 800)
     }
 }

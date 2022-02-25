@@ -66,135 +66,6 @@ body {
     width: 1170px;
   }
 }
-.header {
-  display: flex;
-  width: 100%;
-  background-image: url("../../assets/images/bg-header-web.png");
-  background-repeat: no-repeat;
-  background-position: center;
-}
-@media (max-width: 767.98px) {
-  .header {
-    display: block;
-    background-image: url("../../assets/images/bg-header-mb.png");
-    background-position: 35%;
-  }
-}
-.header .title {
-  margin-top: 22.7rem;
-}
-@media (max-width: 767.98px) {
-  .header .title {
-    margin-top: 8.5rem;
-    padding: 0 1.6rem;
-  }
-}
-.header .title h1 {
-  font-size: 7rem;
-  font-weight: 700;
-  color: #282141;
-  margin: 0;
-}
-@media (max-width: 767.98px) {
-  .header .title h1 {
-    font-size: 3rem;
-  }
-}
-.header .title .title-next {
-  display: flex;
-}
-.header .title .c-red {
-  color: #ED1C24;
-}
-.header .title .subtitle {
-  font-size: 3rem;
-  font-weight: 400;
-  color: #28223F;
-  margin-top: 2.5rem;
-}
-@media (max-width: 767.98px) {
-  .header .title .subtitle {
-    font-size: 1.6rem;
-    margin-top: 1.1rem;
-  }
-}
-.header .contact {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 29.5rem;
-}
-@media (max-width: 767.98px) {
-  .header .contact {
-    flex-direction: column;
-    justify-content: center;
-    margin-top: 35rem;
-    padding: 0 1.6rem;
-  }
-}
-.header .contact .web {
-  display: flex;
-  align-items: center;
-  height: 6.2rem;
-  padding: 0 2.4rem;
-  background-color: #ECC53B;
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: #28223F;
-  text-decoration: none;
-}
-@media (max-width: 767.98px) {
-  .header .contact .web {
-    font-size: 1.4rem;
-  }
-}
-.header .contact .social {
-  display: flex;
-  align-items: center;
-}
-@media (max-width: 767.98px) {
-  .header .contact .social {
-    font-size: 1.4rem;
-    width: 100%;
-    justify-content: space-between;
-    margin-top: -14rem;
-  }
-}
-.header .contact .social h3 {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #28223F;
-  margin-right: 0.2rem;
-}
-.header .contact .social .social-icons {
-  display: flex;
-  align-items: center;
-}
-.header .contact .social .social-icons a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 3.6rem;
-  height: 3.6rem;
-  border-radius: 50%;
-  margin-left: 1rem;
-  border: 0;
-  background-color: #28223F;
-}
-@media (max-width: 767.98px) {
-  .header .contact .social .social-icons a {
-    width: 2.6rem;
-    height: 2.6rem;
-  }
-}
-@media (max-width: 767.98px) {
-  .header .contact .social .social-icons a img {
-    width: 1.4rem;
-    height: 1.4rem;
-  }
-}
-
 .three-outer {
   margin-top: 10rem;
 }
@@ -292,13 +163,6 @@ body {
   display: flex;
   align-items: center;
   font-size: 24px;
-}
-.navbar .logo a {
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: #28223F;
-  margin-left: 6.2rem;
-  text-decoration: none;
 }
 .navbar .links {
   float: right;
@@ -702,7 +566,7 @@ body {
 }
 .slider .circle .plate {
   --angle: -110deg;
-  background-image: url("../../assets/images/slider-1.png");
+  background-image: url("../../assets/images/slider-1.webp");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 35rem;
@@ -1112,7 +976,7 @@ body {
   justify-content: space-between;
   height: 596px;
   margin: 3.5rem 0 4rem;
-  background-image: url("../../assets/images/bg-map-web.png");
+  background-image: url("../../assets/images/bg-map-web.webp");
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -1157,7 +1021,8 @@ body {
     margin: 1rem 0 0;
   }
 }
-.contact .map .requisites p, .contact .map .requisites a {
+.contact .map .requisites p,
+.contact .map .requisites a {
   font-size: 1.6rem;
   font-weight: 400;
   color: #28223F;
@@ -1166,7 +1031,8 @@ body {
   margin: 0;
 }
 @media (max-width: 767.98px) {
-  .contact .map .requisites p, .contact .map .requisites a {
+  .contact .map .requisites p,
+.contact .map .requisites a {
     font-size: 1.4rem;
     line-height: 2.5rem;
     margin: 0;
@@ -1271,6 +1137,9 @@ body {
     padding: 0 1.6rem;
   }
 }
+.contact .footer .web-outer {
+  display: flex;
+}
 .contact .footer .web {
   font-size: 1.4rem;
   font-weight: 400;
@@ -1282,6 +1151,18 @@ body {
     font-size: 1.2rem;
     align-self: flex-start;
   }
+}
+.contact .footer .language {
+  display: inline;
+  background: transparent;
+  border: none;
+  margin: 0 0 0 2rem;
+  padding: 0 0.5rem 0 0;
+  cursor: pointer;
+  color: #ED1C24;
+  font-weight: 600;
+  border-radius: 0;
+  outline: none;
 }
 .contact .footer .social {
   display: flex;

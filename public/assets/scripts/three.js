@@ -4,12 +4,13 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { gsap } from 'gsap'
-import { GUI } from 'dat.gui'
 
 
 var renderer, scene, gui, model
 var camera, controls
 var mouse = new THREE.Vector2(), INTERSECTED
+var MOUSE_MOVE_THRESHOLD = 100, lastMouseMoveTime = -1
+var animatedMeshes = []
 
 const mount = document.querySelector('#three')
 
@@ -20,11 +21,19 @@ animate()
 
 
 function init() {
-    
-    // gui = new GUI()
+    addScene()
+    addLoader()
+    addControls()
+    addLights()
+    addListeners()
+}
 
+function addScene() {
     scene = new THREE.Scene()
-    scene.background = new THREE.Color(0xF4F7FF)
+    const texture = new THREE.TextureLoader().load('assets/model/three-bg.png')
+    texture.encoding = THREE.sRGBEncoding
+    scene.background = texture
+    // scene.background = new THREE.Color(0xF4F7FF)
 
     renderer = new THREE.WebGLRenderer({ antialias: true })
     renderer.setSize(window.innerWidth, window.innerHeight)
@@ -35,13 +44,15 @@ function init() {
     renderer.shadowMapSoft = true
     renderer.shadowMap.type = THREE.PCFSoftShadowMap
     mount.appendChild(renderer.domElement)
+}
 
+function addLoader() {
     const loader = new GLTFLoader()
     const dracoLoader = new DRACOLoader()
     dracoLoader.setDecoderPath('assets/scripts/draco/')
     loader.setDRACOLoader(dracoLoader)
-    loader.load('assets/model/scene.gltf', (gltf) => {
-        model = gltf.scene
+    loader.load('assets/model/scene.glb', (glb) => {
+        model = glb.scene
         scene.add(model)
 
         model.traverse((child) => {
@@ -56,61 +67,7 @@ function init() {
 
         renderer.render(scene, camera)
     })
-
-
-    camera = new THREE.PerspectiveCamera(50, window.innerWidth / (window.innerHeight), 0.1, 1000)
-    camera.position.set(-14, 9, 0)
-    controls = new OrbitControls(camera, renderer.domElement)
-    controls.enablePan = false
-    controls.enableZoom = false
-    controls.enableDamping = true
-    controls.autoRotate = false
-    controls.dampingFactor = 0.03
-    controls.maxPolarAngle = 1.3
-    controls.minPolarAngle = 0.4
-    onWindowResize()
-    updateSceneSize()
-
-    setTimeout(() => controls.autoRotate = true, 4800);
-
-
-
-    new RGBELoader().load('assets/model/env.hdr', (texture) => {
-        const envMap = pmremGenerator.fromEquirectangular(texture).texture
-        scene.environment = envMap
-
-        texture.dispose()
-        pmremGenerator.dispose()
-    })
-
-
-    const pmremGenerator = new THREE.PMREMGenerator(renderer)
-    pmremGenerator.compileEquirectangularShader()
-
-
-    const dlight = new THREE.DirectionalLight(0xffeeb1, 1)
-    dlight.position.set(3, 8, 3)
-    dlight.castShadow = true
-    dlight.shadow.bias = -0.0001
-
-    dlight.shadow.camera.top = 9
-    dlight.shadow.camera.bottom = -9
-    dlight.shadow.camera.left = 9
-    dlight.shadow.camera.right = -9
-
-    scene.add(dlight)
-    scene.add(dlight.target)
-
-
-    window.addEventListener('resize', onWindowResize, false)
-    mount.addEventListener('mousemove', onMouseMove, false)
-
-    mount.addEventListener('mousedown', () => mount.style.cursor = 'grabbing', false)
-    mount.addEventListener('mouseup', () => mount.style.cursor = 'grab', false)
-    mount.addEventListener('mouseenter', () => mount.style.cursor = 'grab', false)
-    mount.addEventListener('mouseout', () => mount.style.cursor = 'pointer', false)
 }
-
 
 function startAnimation() {
     const delays = {
@@ -163,6 +120,61 @@ function startAnimation() {
     })
 }
 
+function addControls() {
+    camera = new THREE.PerspectiveCamera(50, window.innerWidth / (window.innerHeight), 0.1, 1000)
+    camera.position.set(-14, 9, 0)
+    controls = new OrbitControls(camera, renderer.domElement)
+    controls.enablePan = false
+    controls.enableZoom = false
+    controls.enableDamping = true
+    controls.autoRotate = false
+    controls.dampingFactor = 0.03
+    controls.maxPolarAngle = 1.3
+    controls.minPolarAngle = 0.4
+    onWindowResize()
+    updateSceneSize()
+
+    setTimeout(() => controls.autoRotate = true, 4800)
+}
+
+function addLights() {
+    // gui = new GUI()
+
+    new RGBELoader().load('assets/model/env.hdr', (texture) => {
+        const envMap = pmremGenerator.fromEquirectangular(texture).texture
+        scene.environment = envMap
+
+        texture.dispose()
+        pmremGenerator.dispose()
+    })
+
+    const pmremGenerator = new THREE.PMREMGenerator(renderer)
+    pmremGenerator.compileEquirectangularShader()
+
+
+    const dlight = new THREE.DirectionalLight(0xffeeb1, 1)
+    dlight.position.set(3, 8, 3).normalize()
+    dlight.castShadow = true
+    dlight.shadow.bias = -0.0001
+
+    dlight.shadow.camera.top = 9
+    dlight.shadow.camera.bottom = -9
+    dlight.shadow.camera.left = 9
+    dlight.shadow.camera.right = -9
+
+    scene.add(dlight)
+    scene.add(dlight.target)
+}
+
+function addListeners() {
+    window.addEventListener('resize', onWindowResize, false)
+    mount.addEventListener('mousemove', onMouseMove, false)
+
+    mount.addEventListener('mousedown', () => mount.style.cursor = 'grabbing', false)
+    mount.addEventListener('mouseup', () => mount.style.cursor = 'grab', false)
+    mount.addEventListener('mouseenter', () => mount.style.cursor = 'grab', false)
+    mount.addEventListener('mouseout', () => mount.style.cursor = 'pointer', false)
+}
 
 function onWindowResize() {
     if (window.innerWidth < 800) {
@@ -180,7 +192,6 @@ function onWindowResize() {
     }
 }
 
-
 function updateSceneSize() {
     if (window.innerWidth <= 550) {
         controls.minDistance = 24
@@ -191,9 +202,6 @@ function updateSceneSize() {
     }
     controls.update()
 }
-
-
-var MOUSE_MOVE_THRESHOLD = 100, lastMouseMoveTime = -1
 
 function onMouseMove(event) {
     var now = +new Date
@@ -207,9 +215,6 @@ function onMouseMove(event) {
 
     trace()
 }
-
-
-var animatedMeshes = []
 
 function trace() {
     var ray = new THREE.Raycaster()
@@ -237,7 +242,6 @@ function trace() {
         animatedMeshes = []
     }
 }
-
 
 function animate() {
     requestAnimationFrame(animate);
