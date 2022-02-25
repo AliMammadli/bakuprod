@@ -50,7 +50,7 @@
         justify-content: space-between;
         height: 596px;
         margin: 3.5rem 0 4rem;
-        background-image: url("../../assets/images/bg-map-web.png");
+        background-image: url("../../assets/images/bg-map-web.webp");
         background-repeat: no-repeat;
         background-position: center;
 
@@ -93,7 +93,8 @@
                 }
             }
 
-            p, a {
+            p,
+            a {
                 font-size: 1.6rem;
                 font-weight: 400;
                 color: $secondaryLabel;
@@ -143,7 +144,7 @@
                     font-weight: 600;
                     color: $systemRed;
                     margin: 0 0 0.5rem;
-    
+
                     @include media-breakpoint-down(md) {
                         font-size: 2rem;
                         margin: 0 0 0.8rem;
@@ -156,7 +157,7 @@
                     color: $secondaryLabel;
                     line-height: 2rem;
                     margin: 0 0 4.1rem;
-    
+
                     @include media-breakpoint-down(md) {
                         font-size: 1.2rem;
                         line-height: 1.8rem;
@@ -211,6 +212,10 @@
             padding: 0 1.6rem;
         }
 
+        .web-outer {
+            display: flex;
+        }
+
         .web {
             font-size: 1.4rem;
             font-weight: 400;
@@ -221,6 +226,19 @@
                 font-size: 1.2rem;
                 align-self: flex-start;
             }
+        }
+
+        .language {
+            display: inline;
+            background: transparent;
+            border: none;
+            margin: 0 0 0 2rem;
+            padding: 0 0.5rem 0 0;
+            cursor: pointer;
+            color: $systemRed;
+            font-weight: 600;
+            border-radius: 0;
+            outline: none;
         }
 
         .social {

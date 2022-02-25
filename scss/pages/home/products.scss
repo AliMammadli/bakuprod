@@ -1,13 +1,92 @@
 .products {
-    padding-top: 13.6rem;
 
     @include media-breakpoint-down(md) {
-        padding: 12.5rem 1.6rem 0;
+        padding: 7rem 1.6rem 0;
+    }
+
+    .contact-info {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        // margin-top: 29.5rem;
+
+        @include media-breakpoint-down(md) {
+            flex-direction: column;
+            justify-content: center;
+            // margin-top: 35rem;
+            padding: 0 1.6rem;
+        }
+
+        .web {
+            display: flex;
+            align-items: center;
+            height: 6.2rem;
+            padding: 0 2.4rem;
+            background-color: $systemYellow;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: $secondaryLabel;
+            text-decoration: none;
+
+            @include media-breakpoint-down(md) {
+                font-size: 1.4rem;
+            }
+        }
+
+        .social {
+            display: flex;
+            align-items: center;
+
+            @include media-breakpoint-down(md) {
+                font-size: 1.4rem;
+                width: 100%;
+                justify-content: space-between;
+                margin-top: -14rem;
+            }
+
+            h3 {
+                font-size: 1.4rem;
+                font-weight: 600;
+                color: $secondaryLabel;
+                margin-right: 0.2rem;
+            }
+
+            .social-icons {
+                display: flex;
+                align-items: center;
+
+                a {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 3.6rem;
+                    height: 3.6rem;
+                    border-radius: 50%;
+                    margin-left: 1rem;
+                    border: 0;
+                    background-color: $secondaryLabel;
+
+                    @include media-breakpoint-down(md) {
+                        width: 2.6rem;
+                        height: 2.6rem;
+                    }
+
+                    img {
+                        @include media-breakpoint-down(md) {
+                            width: 1.4rem;
+                            height: 1.4rem;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     .label {
         display: flex;
         flex-direction: column;
+        margin-top: 12rem;
 
         .title {
             display: flex;
