@@ -30,10 +30,7 @@ function init() {
 
 function addScene() {
     scene = new THREE.Scene()
-    const texture = new THREE.TextureLoader().load('assets/model/three-bg.png')
-    texture.encoding = THREE.sRGBEncoding
-    scene.background = texture
-    // scene.background = new THREE.Color(0xF4F7FF)
+    scene.background = new THREE.Color(0xF4F7FF)
 
     renderer = new THREE.WebGLRenderer({ antialias: true })
     renderer.setSize(window.innerWidth, window.innerHeight)
